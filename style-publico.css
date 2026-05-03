@@ -1,0 +1,102 @@
+:root {
+    --gold: #d4af37;
+    --dark-bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    magin: 0;
+    padding: 20px;
+}
+
+#app {
+    max-width: 500px;
+    margin 0 auto;
+}
+
+header {
+    text-align:certer;
+    margin-bottom: 30px;
+}
+
+h2{
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+h3{
+    font-size: 1.1rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 10px;
+    margin-top: 25px;
+}
+
+.grid-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.item-selecionavel {
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+
+    width: 50%;
+
+}
+
+
+.item-selecionavel.active {
+    border-color: var(--gold);
+    background: #2d3748;
+}
+
+.item-selecionavel span {
+    display: block;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Horários */
+.grid-horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.hora-card {
+    background: #334155;
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.hora-card.ocupado {
+    opacity: 0.3;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.hidden { display: none; }
+
+#btn-confirmar {
+    background: var(--gold);
+    color: black;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+}
