@@ -1,6 +1,6 @@
 {
   "name": "Barber System Pro",
-  "short_name": "BarberApp",
+  "short_name": "BarberApp Pro",
   "description": "Sistema Profissional para Barbearias",
   "start_url": "index.html",
   "display": "standalone",
