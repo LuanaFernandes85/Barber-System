@@ -78,6 +78,9 @@ function carregarClientes() {
             <button class="btn btn-red" onclick="bloquear('${id}')">
               Bloquear
             </button>
+            <button class="btn btn-red" onclick="excluirCliente('${id}', '${user.email || ""}')">
+              Excluir
+            </button>
           </div>
         </div>
       `;
@@ -110,6 +113,24 @@ function bloquear(id) {
   }).then(() => alert("Usuário bloqueado!"));
 }
 
+function excluirCliente(id, email) {
+  const confirmar = confirm(
+    `Tem certeza que deseja excluir o cliente ${email}?\n\n` +
+    "Essa ação excluirá o cadastro do cliente no Firestore e não poderá ser desfeita."
+  );
+
+  if (!confirmar) return;
+
+  db.collection("usuarios").doc(id).delete()
+    .then(() => {
+      alert("Cadastro excluído com sucesso!");
+    })
+    .catch((error) => {
+      console.error("Erro ao excluir cliente:", error);
+      alert("Não foi possível excluir o cliente. Verifique as permissões do Firebase.");
+    });
+}
+      
 // Função para o Admin deslogar
 function sairAdmin() {
     if (confirm("Deseja realmente sair do painel administrativo?")) {
